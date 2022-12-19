@@ -20,6 +20,9 @@ const videoPlayerSection = document.querySelector(".video_player_section");
 const videoWindow = document.querySelector(".video_window");
 const videoSource = document.querySelector(".video_source");
 
+const sortingArea = document.querySelector(".sorting_area");
+const sortTexts = document.querySelectorAll(".sort_text");
+const sortButtons = document.querySelectorAll(".sorting_button");
 const sortName = document.querySelector(".sorting_name_button");
 const sortReverse = document.querySelector(".sorting_reverse_button");
 const sortNew = document.querySelector(".sorting_newest_button");
@@ -50,6 +53,7 @@ const formResponce = document.querySelector(".form_responce");
 
 pauseButton.style.display = "none";
 speakerOffButton.style.display = "none";
+sortingArea.style.display = "none";
 
 //empty media array
 let media = [];
@@ -89,6 +93,12 @@ menuBtn.onclick = () => {
     for (let i = 0; i < linksName.length; i++) {
       linksName[i].style.display = "none";
     }
+    for (let i = 0; i < sortTexts.length; i++) {
+      sortTexts[i].style.display = "none";
+    }
+    for (let i = 0; i < sortButtons.length; i++) {
+      sortButtons[i].style.width = "30px";
+    }
     pageContent.style.left = "104px";
     formSection.style.left = "104px";
     logoIcon.style.display = "none";
@@ -101,6 +111,12 @@ menuBtn.onclick = () => {
     for (let i = 0; i < linksName.length; i++) {
       linksName[i].style.display = "block";
     }
+    for (let i = 0; i < sortTexts.length; i++) {
+      sortTexts[i].style.display = "block";
+    }
+    for (let i = 0; i < sortButtons.length; i++) {
+      sortButtons[i].style.width = "80px";
+    }
     pageContent.style.left = "240px";
     formSection.style.left = "240px";
     logoIcon.style.display = "flex";
@@ -112,7 +128,7 @@ menuBtn.onclick = () => {
   }
 };
 
-//print music and sound cards
+//print music and audio cards
 musicLink.onclick = (e) => {
   e.preventDefault();
   showMusic();
@@ -123,6 +139,7 @@ musicLinkStarter.onclick = (e) => {
 };
 function showMusic() {
   formSection.style.display = "none";
+  sortingArea.style.display = "block";
   closeVideoPlayer();
   getJSON(audioFiles, "user");
   console.log("musalinkkiä painettu");
@@ -139,6 +156,7 @@ videoLinkStarter.onclick = (e) => {
 };
 function showVideo() {
   formSection.style.display = "none";
+  sortingArea.style.display = "block";
   closeVideoPlayer();
   closeAudioPlayer();
   getJSON(videoFiles, "user");
@@ -531,6 +549,7 @@ function playVideo(media, name) {
   videoPlayerSection.style.display = "flex";
   videoWindow.load();
   videoSource.src = `/media/${media}`;
+  sortingArea.style.display = "none";
 }
 //listeners
 musicPlayer.addEventListener("timeupdate", updatetime);

@@ -723,9 +723,12 @@ input, textarea {
 
 .sorting_button {
   margin: 0.25rem;
+  display: flex;
   height: 1.75rem;
   width: 5rem;
-  border-radius: 0.75rem;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(71 85 105 / var(--tw-border-opacity));
@@ -737,6 +740,20 @@ input, textarea {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-shadow-color: #cbd5e1;
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.sorting_button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+.sorting_button svg {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.sort_text {
+  margin-left: 0.25rem;
 }
 
 .fixed {
@@ -767,17 +784,22 @@ input, textarea {
   left: 15rem;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .m-1 {
   margin: 0.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
 }
 
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .mx-4 {
@@ -795,6 +817,10 @@ input, textarea {
 
 .ml-4 {
   margin-left: 1rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-20 {
@@ -817,8 +843,12 @@ input, textarea {
   margin-right: 0.5rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mt-14 {
+  margin-top: 3.5rem;
 }
 
 .block {
@@ -831,6 +861,10 @@ input, textarea {
 
 .table {
   display: table;
+}
+
+.grid {
+  display: grid;
 }
 
 .h-full {
@@ -849,13 +883,17 @@ input, textarea {
   height: 2.25rem;
 }
 
-.h-\[calc\(100\%-112px\)\] {
-  height: calc(100% - 112px);
-}
-
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-\[calc\(100\%-112px\)\] {
+  height: calc(100% - 112px);
 }
 
 .h-28 {
@@ -888,6 +926,10 @@ input, textarea {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-\[calc\(100\%-240px\)\] {
@@ -939,16 +981,16 @@ input, textarea {
   align-items: center;
 }
 
-.justify-start {
-  justify-content: flex-start;
-}
-
 .justify-center {
   justify-content: center;
 }
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .overflow-auto {
